@@ -22,6 +22,16 @@ And answer:
 
 ---
 
+## 📌 Key Technical Highlights
+
+- Advanced SQL (CTEs, window functions, aggregations)
+- Customer segmentation using RFM (NTILE)
+- Pareto analysis (cumulative revenue distribution)
+- Root cause analysis using customer reviews
+- End-to-end workflow: SQL → CSV → Python → Visualization
+
+---
+
 ## 📊 Key Visuals
 
 ### Revenue Trend
