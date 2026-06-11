@@ -1,236 +1,122 @@
-# E-commerce Revenue & Customer Behavior Analysis
+# E-commerce Revenue & Customer Behavior Analytics
 
-## 🚀 Key Insight
+## 🚀 Project Overview
 
 High revenue does not always mean a healthy business.
 
-This project reveals how **top-performing categories can hide serious customer experience issues**, impacting customer retention and long-term business performance.
+This project explores the Brazilian Olist e-commerce dataset to understand how customer behavior, product performance, and customer experience interact to drive business outcomes.
+
+The goal is not only to identify where revenue comes from, but also to uncover hidden operational risks that may affect long-term business performance.
 
 ---
 
-## 🎯 Objective
+## 🎯 Business Questions
 
-Identify:
+This project aims to answer:
 
-- Where revenue is generated  
-- Which customers drive it  
-- Where hidden risks exist  
-
-And answer:
-
-👉 *Are we growing sustainably, or masking problems behind strong revenue?*
+- Which categories generate the most revenue?
+- Which customer segments drive business growth?
+- Do high-revenue categories always deliver a good customer experience?
+- Can customer reviews reveal hidden operational issues?
+- How can data support better business decisions?
 
 ---
 
-## 📌 Key Technical Highlights
+## 🧠 Key Insights
 
-- Advanced SQL (CTEs, window functions, aggregations)
-- Customer segmentation using RFM (NTILE)
-- Pareto analysis (cumulative revenue distribution)
-- Root cause analysis using customer reviews
-- End-to-end workflow: SQL → CSV → Python → Visualization
+- Revenue follows a Pareto distribution.
+- High-value customers exhibit different purchasing behaviours.
+- High-revenue categories can hide customer experience issues.
+- Customer reviews reveal operational risks invisible in aggregate metrics.
+- Root cause analysis helps transform raw data into actionable business insights.
 
 ---
 
-## 📊 Key Visuals
+## 📊 Featured Visualizations
 
-### Revenue Trend
-![Revenue](outputs/charts/revenue_over_time.png)
+### Pareto Revenue Distribution
 
-### Pareto Distribution
+Identifies the categories responsible for the largest share of total revenue.
+
 ![Pareto](outputs/charts/pareto_revenue.png)
 
+---
+
 ### Revenue vs Customer Satisfaction
-![Scatter](outputs/charts/category_revenue_vs_average_review.png)
+
+Highlights categories where strong revenue may hide customer experience problems.
+
+![Revenue vs Satisfaction](outputs/charts/category_revenue_vs_average_review.png)
 
 ---
 
-## 🧠 Business Problem
+### Champions vs Big Spenders
 
-High revenue can be misleading.
+Compares purchasing behaviour between high-value customer segments.
 
-In e-commerce, some products or categories:
-
-- Generate significant revenue  
-- While simultaneously creating poor customer experience  
-
-This leads to:
-
-- Returns and refunds  
-- Customer churn  
-- Long-term brand damage  
-
-**Goal:**  
-Detect high-revenue areas with hidden experience issues and understand their root causes.
+![Segment Comparison](outputs/charts/category_comparison.png)
 
 ---
 
-## 📦 Dataset
+### Root Causes of Customer Issues
 
-- Brazilian e-commerce dataset (Olist)
-- Tables used:
-  - orders
-  - customers
-  - order_items
-  - products
-  - order_reviews
+Drills down into customer reviews to identify the main drivers of dissatisfaction.
 
-Key fields:
-
-- `customer_unique_id` → real customer identifier  
-- `price + freight_value` → revenue  
-- `review_score` → customer satisfaction  
-- `product_category_name` + translation lookup → product category normalization 
-
----
-
-## ⚠️ Methodological Note
-
-Olist reviews are linked to orders rather than individual products.  
-For this reason, product- and category-level customer experience analysis uses order reviews as a proxy. This is acceptable for exploratory analysis, but results should be interpreted with appropriate caution.
-
----
-
-## 🔍 Analysis Workflow
-
-### 1. Revenue Overview
-- Monthly revenue trend  
-- Growth patterns over time  
-
----
-
-### 2. Pareto Analysis (80/20)
-- Revenue distribution by category  
-- Identification of top-performing categories  
-
-**Insight:**  
-A small number of categories drives the majority of total revenue.
-
----
-
-### 3. Customer Segmentation (RFM)
-
-Customers segmented using:
-
-- Recency  
-- Frequency  
-- Monetary  
-
-Main segments:
-
-- Champion  
-- Big Spender  
-- Others  
-
-Focus on high-value customers.
-
----
-
-### 4. Segment Behavior Analysis
-
-Different behavior patterns:
-
-- Champions → more **home & lifestyle categories**  
-- Big Spenders → more **tech & impulse-driven categories**
-
----
-
-### 5. Customer Experience Analysis
-
-- Revenue vs review score by category  
-
-👉 Detection of:
-
-**High revenue + low satisfaction categories**
-
----
-
-### 6. Problematic Category Detection
-
-Category identified:
-
-- `bed_bath_table`
-
-Why:
-
-- High revenue contribution  
-- Below-average satisfaction  
-
----
-
-### 7. Product-Level Root Cause Analysis
-
-Analysis of a high-revenue product revealed:
-
-- Incorrect size / dimensions  
-- Misleading product descriptions  
-- Delivery issues  
-- Poor perceived quality  
-
-These issues appear even among:
-
-- Champion customers  
-- Big Spenders  
-
----
-
-## 💡 Key Insights
-
-- Revenue follows a **Pareto distribution**  
-- High-value customers behave differently  
-- High-revenue categories can hide **critical experience issues**  
-- Customer reviews expose **operational problems invisible in aggregate data**
-
----
-
-## 🧩 Business Recommendations
-
-- Improve product description accuracy  
-- Strengthen quality control  
-- Improve logistics reliability  
-- Monitor high-revenue / low-satisfaction products  
-- Prioritize experience for high-value customers  
+![Product Issues](outputs/charts/product_issues.png)
 
 ---
 
 ## ⚙️ Tech Stack
 
 - SQL (PostgreSQL)
-- Window functions (NTILE, RANK, SUM OVER)
-- CTE-based transformations
-- Python (pandas, matplotlib)
+- CTEs and Window Functions
+- RFM Customer Segmentation
+- Python
+- Pandas
+- Matplotlib
+- Business Analytics
+- Data Visualization
+- Root Cause Analysis
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```text
-sql/        -> analytical queries
-data/       -> exported datasets (CSV)
-outputs/    -> charts
-notebooks/  -> analysis and visualization
+sql/
+data/
+outputs/
+notebooks/
 ```
+
+- **sql/** → analytical SQL queries
+- **data/** → exported datasets
+- **outputs/** → visualizations
+- **notebooks/** → Python analysis and chart generation
 
 ---
 
-## 💼 Why this project matters
+## 💼 What This Project Demonstrates
 
 This project demonstrates:
 
-- Ability to work with real-world messy data  
-- Strong SQL applied to business problems  
-- End-to-end analytical thinking (data → insight → decision)  
-- Root cause analysis beyond dashboards  
-
-It shows how data can be used not only to measure performance, but to **identify hidden risks and drive better decisions**.
+- Advanced SQL applied to real business problems.
+- Customer segmentation using RFM analysis.
+- End-to-end analytical workflows.
+- Data transformation and visualization.
+- Root cause analysis beyond traditional dashboards.
+- The ability to convert raw data into actionable business insights.
+- A Data Engineering mindset combining technical implementation with business understanding.
 
 ---
 
-## 📈 Visualizations Included
+## 📈 Project Highlights
 
-- Revenue trend over time  
-- Pareto distribution  
-- Customer segmentation  
-- Revenue vs satisfaction  
-- Segment category comparison  
-- Product-level issue analysis  
+- Revenue trend analysis
+- Pareto analysis
+- RFM customer segmentation
+- Customer segment behaviour
+- Revenue vs customer satisfaction
+- Problematic category detection
+- Product-level root cause analysis
+- Business recommendations based on data
